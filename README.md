@@ -1,4 +1,4 @@
-# DEPT-TRACKER-APP
+# DEBT-TRACKER-APP
 
 A mobile-first web app that helps small business owners (market traders, tailors, hair vendors and more) keep track of who owes them money, replacing the notebook.
 
@@ -8,7 +8,7 @@ Many small business owners in Nigeria record customer debts in paper notebooks. 
 
 ## The solution
 
-DEPT-TRACKER-APP lets a business owner log customers, record debts and payments, see who owes the most, and send a WhatsApp reminder with one tap.
+DEBT-TRACKER-APP lets a business owner log customers, record debts and payments, see who owes the most, and send a WhatsApp reminder with one tap.
 
 ## Features
 
