@@ -2,6 +2,7 @@ import express from "express";
 import bcrypt from "bcrypt";
 import User from "../models/User.js";
 import jwt from "jsonwebtoken";
+import requireAuth from "../middleware/auth.js";
 
 const router = express.Router();
 
@@ -82,6 +83,19 @@ router.post("/login", async (req, res) => {
     });
   } catch (error) {
     console.error("Login error:", error.message);
+    res.status(500).json({ message: "Something went wrong" });
+  }
+});
+
+router.get("/me", requireAuth, async (req, res) => {
+  try {
+    const user = await User.findById(req.userId).select("-passwordHash");
+    if (!user) {
+      return res.status(404).json({ message: "User not found" });
+    }
+    res.json(user);
+  } catch (error) {
+    console.error("Me error:", error.message);
     res.status(500).json({ message: "Something went wrong" });
   }
 });
